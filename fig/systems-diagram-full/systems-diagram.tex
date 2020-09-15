@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{>=stealth}
+\usetikzlibrary{fit}
+\usetikzlibrary{calc}
+
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+{ \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+\begin{document}	
+	\begin{tikzpicture}
+	\node[fit={(-3.5, 1) (3.5,-5)}, inner sep=0pt] {};
+	
+	\node at (0,0) (risk-appetite) {Risk appetite};
+	\node at (2,-3.464) (dapi-load) {dAPI load};
+	\node at (-2,-3.464) (collateral-risk) {Collateral risk};
+	
+	\node at (0,-2) (b) {\bfseries \large B};
+	\draw [<-, thick] (b) ++(-0.5,0) arc [start angle=-180, end angle=145, radius=0.5];
+
+	\centerarc[<-, thick](b)(-35:60:2.25)
+	\centerarc[<-, thick](b)(-130:-50:2.25)
+	\centerarc[<-, thick](b)(-240:-145:2.25)
+	
+	
+	\node at (2.5, -1.5) (b) {\bfseries \large $+$};
+	\node at (0, -4.5) (b) {\bfseries \large $+$};
+	\node at (-2.5, -1.5) (b) {\bfseries \large $-$};
+	
+	\end{tikzpicture}
+\end{document}
