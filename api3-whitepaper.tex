@@ -65,7 +65,7 @@ As a result, the API3 Project will allow smart contract platforms to leverage AP
 \label{sec:introduction}
 
 We are witnessing the birth of decentralized applications that are able to interact with the real world, which is immediately reflected in the value they capture.
-The most prominent example of this phenomenon is the recent surge of value flowing into DeFi (decentralized finance) with more than \$8B total value locked in various applications as of September 2020~\cite{defipulse}.
+The most prominent example of this phenomenon is the recent surge of value flowing into DeFi (decentralized finance) with more than \$100B total value locked in various applications as of November 2021~\cite{defipulse}.
 A DeFi application typically requires asset prices to be delivered to its smart contract platform through a data feed~\cite{liu:2020}.
 This data feed facilitates the application’s interaction with the real world, ultimately allowing it to provide meaningful services such as derivative exchanges and lending.
 What is unfolding right now is not only the rise of DeFi but the rise of decentralized applications that can meaningfully interact with the real world, and DeFi is only the tip of the iceberg.
@@ -445,7 +445,7 @@ The first and the most commonly used API style follows the request--response pat
 This will be the first pattern that Airnode will support, as it is easy to standardize and integrate with existing APIs that follow the same pattern.
 An example use case of this scheme would be requesting the result of a specific match to be delivered, which can be used to resolve the respective prediction market.
 In addition, Airnode is planned to support the publish--subscribe pattern, where the user requests the oracle to call back a specific method when parametrized conditions are met.
-For example, a decentralized exchange may request the oracle to trigger a liquidation event for a user in a leveraged position when ETH price drops below \$400.
+For example, a decentralized exchange may request the oracle to trigger a liquidation event for a user in a leveraged position when ETH price drops below \$4000.
 Either of these patterns can be used to implement the live data feeds that DeFi applications use today~\cite{liu:2020}, but they can also support a much larger variety of use cases in the form of dAPIs.
 
 As mentioned in Section~\ref{sec:airnode-features}, the Airnode protocol is designed in a way that the requester assumes all gas costs, even including the request fulfillment transactions.
