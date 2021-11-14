@@ -803,11 +803,10 @@ Respective API3 teams investigate the dAPI malfunction risks and the specific us
 Upon paying the fee to the contract, the dAPI user gains access to the dAPI and gets insured for the respective payment period.
 
 If the dAPI user notices a malfunction, they will assess damages and make an on-chain insurance claim.
-This will automatically lock the claimed amount at the collateral pool described in Section~\ref{sec:api3-tokenomics}.
 Stake withdrawals will have an adequate lead-time that will prevent stakers from front-running claims, i.e., withdrawing as soon as a dAPI malfunctions to evade claims.
 On the other hand, the insuree will need to stake funds to be able to make a claim to disincentivize abuse.
 The API3 DAO can either pay out the claim directly, or escalate the claim to the Kleros court, which will determine if the claimed amount will be paid out to the dAPI user.
-The claim being denied will result in the tokens being unlocked, while the claim being accepted will result in the tokens being transferred to the dAPI user.
+The claim being accepted will result in the tokens being transferred to the dAPI user.
 This corresponds to stakers covering the damages proportional to the amount they have staked; that is, a user who has staked tokens that make up $p\%$ of the entire pool will pay $p\%$ of an accepted claim.
 
 The scheme described above assumes all amounts to be denominated in API3 tokens.
