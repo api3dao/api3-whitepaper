@@ -649,17 +649,17 @@ In other words, the governing entities should be rewarded for good results and p
 The API3 token is designed to facilitate this through three main utilities:
 
 \begin{enumerate}
-    \item Staking: Grants dAPI revenue and inflationary rewards.
+    \item Staking: Grants inflationary rewards, which are balanced by deflationary mechanics such as tokens being burned or time-locked to receive API3 services.
     \item Collateral: Backs insurance services that protect users from damages caused by dAPI malfunctions.
     \item Governance: Grants direct representation in the API3 DAO.
 \end{enumerate}
 
-The staking utility provides a financial incentive for participating in API3 and contributing to increase its revenue.
+The staking utility provides a financial incentive for participating in API3 and contributing to increase the usage of its services.
 The collateral utility has the participants share API3’s operational risk and incentivizes them to minimize it.
 Finally, the governance utility gives the participants the ultimate instrument to enact these incentives.
 
 Note that it is critical for these three utilities to coincide.
-All governing entities must receive staking rewards for them to govern in a way that maximizes revenue.
+All governing entities must receive staking rewards for them to govern in a way that maximizes usage.
 All governing entities must have their funds used as collateral for them to govern in a way that minimizes security risks.
 To this end, API3 will have a single staking pool.
 Staking API3 tokens in this pool will grant representation and staking rewards, but at the same time, the staked tokens will be used as collateral to pay out insurance claims as needed.
@@ -667,43 +667,35 @@ Staking API3 tokens in this pool will grant representation and staking rewards, 
 \subsubsection{Staking}
 \label{sec:staking}
 
-API3 aims to set up, maintain, and monetize dAPIs at scale.
-Its success in doing so can be estimated by its total revenue, as this will increase with the number of dAPIs and the amount of funds secured by them.
-To align the governance incentives with API3’s success, a portion of this revenue decided on by the DAO will be distributed to stakers.
-This mechanic is expected to dominate the positive staking incentives as API3 gains traction.
+A robust consensus mechanism rewards participants with the value that is captured from the enabled functionality, which creates a positive feedback loop.
+For example, Ethereum enables trustless applications.
+The miners that validate the correct operation of these applications receive the entirety of the transaction fees paid by their users.
+In our case, API3 stakers are the participants of the consensus mechanism that governs the project, which implies that they should be the sole beneficiary of dAPI monetization.
+Following from this analogy, the recent work on EIP-1559~\cite{eip1559} is relevant to our design.
 
-Inflationary staking rewards is a battle-tested mechanic that is useful to initialize and maintain a pool that needs to over-collateralize a service~\cite{synthetix:2020}, e.g., the dAPI insurance service that is described in Section~\ref{sec:quantifiable-security-through-insurance}.
-It is also a good token distribution tool that favors token holders that participate in the system over passive ones.
-Therefore, inflationary staking rewards will be utilized to further incentivize staking.
+Until the recent London fork~\cite{london}, Ethereum users directly paid the miners to have their transactions included to the chain.
+EIP-1559 posed that the primarily transaction fee-based miner incentivization scheme caused economic instability~\cite{roughgarden:2020}.
+With the update, the users now pay a base fee that floats with network usage, and this fee gets burned.
+Instead of the full transaction fee, the miners receive a stable, inflationary block reward.
+(EIP-1559 also includes a priority fee mechanism that counters Ethereum-specific issues such as uncle blocks and the block size limit, which do not have a direct correspondence in our analogy.)
 
-\begin{figure}[t]
-     \centering
-     \begin{subfigure}{0.9\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{fig/token/token-weekly-emission}
-         \caption{The number of tokens minted every week is exponentially decayed to reduce the annual inflation rate from $75\%$ to $2.5\%$ until the end of year 5.
-         At the end of year 5, the annual inflation rate is fixed at a constant $2.5\%$.}
-         \label{fig:token-emission}
-     \end{subfigure}
-     \begin{subfigure}{0.9\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{fig/token/token-total-supply}
-         \caption{The total supply of API3 tokens starts from 100 million and increases according to the schedule shown above in (a).}
-         \label{fig:total-supply}
-     \end{subfigure}
-    \caption{API3 token inflation schedule for staking rewards.}
-    \label{fig:token}
-\end{figure}
+A DAO that distributes revenue to the stakers is similar to pre-EIP-1559 mining rewards in that it will cause instability.
+Each revenue distribution event creates a discontinuous jump in terms of incentives, which will be abused for profit.
+For example, a group of stakers may propose dAPI subscription fees to be paid yearly instead of monthly, and unstake as soon as the subscription fees are paid and the revenue is distributed.
+In addition to punishing long term participants, this will cause the total staked amount to oscillate according to periodic subscription fee payments.
+Just as the problem is an analog, so is the solution.
+The API3 DAO will require the users to burn or time-lock API3 tokens to receive services, effectively creating a deflationary mechanism that benefits the staking reward recipients indirectly.
 
-In essence, inflationary rewards force token holders to stake to preserve the value of their tokens.
-However, staking is risky due to the funds being used as collateral, and forces the staker to participate in governance to ensure that the risk is minimized (a similar mechanic is proposed recently in~\cite{aave}).
-As a combination of the two, an inflationary governance token used as collateral forces all token holders to participate in governance, which is ideal because it maximizes the decentralization of governance.
-Furthermore, inflationary rewards are vested for a year, which results in governing parties sharing the project’s long term interests.
+API3 services being used will cause a shortage in API3 supply, which will benefit all token holders, and not only the stakers.
+This implies that the staking rewards should be regulated to ensure that a certain portion of the API3 token holders stake, which will secure the governance of the project and provide collateral for insurance products.
+To this end, the API3 DAO sets a ``stake target", which is a percentage of the total token supply.
+Every week, the reward amount is updated iteratively, i.e., increases if the staked amount is below the stake target, and vice versa.\footnote{\url{https://enormous.cloud/dao/api3/tracker} is an explorer for the API3 DAO that is maintained by Enormous.Cloud. You can use it to see the history of the reward amounts to date.}
 
-The inflationary rewards will start at a 75\% annual rate (1.44\% weekly), and the number of tokens minted weekly will be decayed exponentially until annual inflation rate becomes 2.5\% at the end of year 5.
-From this point on, the annual inflation will stay at a rate of 2.5\% for perpetuity (see Figure~\ref{fig:token-emission}).
-The change in the total supply of API3 tokens is illustrated in Figure~\ref{fig:total-supply}.
-The proposed inflation schedule is adapted from \cite{sip-24} and will be governable.
+It is challenging to incentivize good governance through staking rewards, as it is not something that can be reliably detected.
+For example, participation is generally considered to be desirable, yet voting on a proposal that will already pass is redundant in most cases, and actively abstaining is a legitimate stance.
+As a solution, we only reward long-term outcomes.
+Specifically, the staking rewards are paid out weekly, yet each payment becomes withdrawable after a full year.
+This incentivizes all stakers to cooperate to maximize the token price one year from now, and the rolling nature of this release prevents instability.
 
 \subsubsection{Collateral}
 \label{sec:collateral}
