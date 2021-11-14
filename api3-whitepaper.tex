@@ -40,7 +40,7 @@
 \noindent 
 With decentralized applications beginning to provide meaningful services in areas such as decentralized finance, there is an increasing need for these applications to receive data or trigger events using traditional Web APIs.
 However, the generic oracle solutions fail to appropriately address the API connectivity problem due to an over-generalized and misguided approach.
-To remedy this issue, API3 will drive a collaborative effort to create a new generation of blockchain-native, decentralized APIs, or dAPIs for short.
+To remedy this issue, API3 drives a collaborative effort to create a new generation of blockchain-native, decentralized APIs, or dAPIs for short.
 dAPIs are composed of first-party oracles operated by API providers, and thus are more secure and cost-efficient than alternative solutions that employ middlemen.
 At the core of the governance, security, and value capture mechanics of this initiative will be the API3 token.
 Staking the token will grant its holders full governing rights over the API3 DAO along with all the associated rewards.
@@ -92,16 +92,16 @@ It is composed of the following elements:
 \end{figure}
 
 API3 is a collaborative effort to build, manage and monetize dAPIs at scale.
-To achieve this in a fully decentralized way, the incentives of the participants will be reconciled through the governance, security, and value capture utilities of the API3 token.
-The project will have a completely open and direct governance model, where any API3 token holder will be able to stake to obtain direct voting privileges in the API3 DAO.
-In addition, stakers will receive a portion of the dAPI revenue, inflationary staking rewards and any additional benefits that the DAO may decide on in the future.
+To achieve this in a fully decentralized way, the incentives of the participants are reconciled through the governance, security, and value capture utilities of the API3 token.
+The project has a completely open and direct governance model, where any API3 token holder is able to stake to obtain direct voting privileges in the API3 DAO.
+In addition, stakers will benefit from dAPI usage through inflationary staking rewards and any additional benefits that the DAO may decide on in the future.
 The staked API3 tokens will back an on-chain insurance service as collateral to provide dAPI users with quantifiable and trustless security guarantees (see Figure~\ref{fig:teaser}).
 
 One of the fundamental flaws of existing oracle solutions is attempting to establish and maintain a parasitic connection with the data sources, which cannot produce a sustainable ecosystem.
 In contrast, we start off with the recognition that the API providers are the engine of this project.
 Therefore, they will not be abstracted away, but rather be attributed and compensated so that their interests are fully aligned with the interests of the greater API3 ecosystem.
 We have already witnessed API providers’ eagerness in incentivizing adoption of their services by decentralized applications through providing free testnet calls for their paid APIs~\cite{honeycomb.market} and offering cash prizes for hackathons~\cite{honeycomb-hackathon}.
-Cultivating this cooperation further will be one of the main sources of strength of API3.
+Cultivating this cooperation further is one of the main sources of strength of API3.
 
 Decentralized oracle network solutions employ third-party oracles because it is often not feasible for the API providers to operate their own oracle nodes.
 This positions third-party oracles as expensive middlemen and forms an additional attack surface.
@@ -112,12 +112,12 @@ The resulting dAPIs will be cost-efficient and secure against attacks from an in
 In the case of a malfunction, the dAPI user will be able to claim compensation up to a pre-negotiated amount from the staking pool.
 Kleros~\cite{kleros:2019}, an on-chain dispute resolution protocol, will be used to decide if the claim is to be paid out based on the presented evidence.
 This will incentivize stakers to actively participate in governance to ensure that dAPIs are being managed transparently and in a way that minimizes security risks.
-Successful governance---generating revenue from dAPIs while avoiding mistakes that will result in paying out insurance claims---will be rewarded in API3 tokens, which will create a positive feedback loop that will continually improve governance.
+Successful governance---successfully monetizing dAPIs while avoiding mistakes that will result in paying out insurance claims---will be rewarded in API3 tokens, which will create a positive feedback loop that will continually improve governance.
 
 Refer to Figure~\ref{fig:teaser} again for an overview of our solution.
 dAPIs are networks of first-party oracles that provide traditional API services in a decentralized and blockchain-native way.
 The API3 DAO builds, manages and monetizes dAPIs at scale.
-Decentralized applications pay a subscription fee to gain access to a dAPI.
+Decentralized applications use the API3 token to gain access to a dAPI.
 API3 token holders stake into a pool to receive rewards and voting rights at the DAO.
 This staking pool is used as collateral for an on-chain insurance service that provides dAPI users with a quantifiable level of security.
 API3 improves upon the existing oracle solutions in terms of decentralization, cost-efficiency, security, transparency and ecosystem growth potential.
@@ -345,7 +345,7 @@ It is in the interest of the API providers to do this, as it increases on-chain 
 
 First-party oracles are integral to the API3 solution.
 This means each API is served by an oracle that is operated by the entity that owns the API, rather than a third-party.
-In this section, we will discuss the benefits of using first-party oracles, why it is not feasible for API providers to operate their own oracles with current available solutions, and how we aim to solve this problem with Airnode.
+In this section, we will discuss the benefits of using first-party oracles, and how we made it feasible for API providers to operate their own oracles with Airnode.
 
 \subsection{Benefits of disintermediation}
 \label{sec:benefits-of-disintermediation}
@@ -360,7 +360,7 @@ Assuming that each API is typically served by at least two third-party oracles, 
 
 First-party oracles also provide much needed transparency in terms of the data source and the degree of decentralization.
 Since each API provider will operate an oracle---which will be visible on-chain---the number of oracles serving a data feed will accurately represent how decentralized it is, as there is a one-to-one mapping between oracle and data source.
-Furthermore, the API providers would publish their on-chain identities through off-chain channels, which would allow the users to verify whose data they are consuming at a given time.
+Furthermore, the API providers publish their on-chain identities through off-chain channels, which allows the users to verify whose data they are consuming at a given time.
 
 Finally, having the API providers operate the oracles solves the legal issues mentioned in Section~\ref{sec:lack-of-transparency}, as the API services no longer need to be licensed to a third party and the API providers receive the entire revenue.
 Furthermore, this solves the rent-seeking third-party oracles problem, and allows the funds to be redirected to the group that is doing the heavy lifting, the API providers.
@@ -381,7 +381,7 @@ This results in a severely limited API selection even compared to the regular th
 \subsection{Barriers to API providers operating oracles}
 \label{sec:barriers-to-api-providers-operating-oracles}
 
-During our work on Honeycomb API Marketplace~\cite{benligiray:2019} in the past two years, we communicated with API providers extensively and observed the following barriers to oracle onboarding and operation:
+During our work on Honeycomb API Marketplace~\cite{benligiray:2019}, we communicated with API providers extensively and observed the following barriers to oracle onboarding and operation:
 
 \begin{enumerate}
     \item Traditional API providers are typically not more familiar with blockchain technologies than the general public.
@@ -430,10 +430,10 @@ Then, it is important for the oracle node implementation to not contain single p
 Existing solutions using third-party oracles depend on over-redundancy at the oracle level to cover for this, which results in excessive costs as mentioned in Section~\ref{sec:ineffective-redundancy}.
 API3 envisions each API to only be served by its first-party oracle, which means the redundancy has to be implemented at the level of the individual Airnode.
 The node being fully-serverless enables this to be done easily across different availability zones of a single cloud provider, or even across multiple cloud providers.
-It should also be mentioned that it will be possible to containerize Airnode and operate it on-premises, yet using the serverless version will be recommended for almost all use cases.
+It should also be mentioned that it is possible to operate the containerized version of Airnode on-premises, yet using the serverless version will be recommended for almost all use cases.
 
-Airnode is developed by the founding members of API3 and is now open-sourced\footnote{\url{https://github.com/api3dao/airnode}}.
-The software is feature-complete for the protocol described in Section~\ref{sec:airnode-protocol}, and further development will be funded by API3 in the form of grants.
+Airnode is open-sourced with MIT License and ready to enable first-party oracles\footnote{\url{https://github.com/api3dao/airnode}}.
+API3 will fund Airnode development through grants, and the core technical team is its current maintainer.
 
 \subsection{Airnode protocol}
 \label{sec:airnode-protocol}
@@ -457,23 +457,23 @@ This scheme has significant advantages:
 \begin{itemize}
     \item The volatility in gas costs and payment token prices (e.g., LINK) makes it virtually impossible for oracles to set profitable yet competitive prices.
     Calculating prices dynamically on-chain requires multiple data feeds and adds a significant gas overhead per-request.
-    With the Airnode protocol, the API providers do not have to concern themselves with gas costs, and can use pricing schemes such as \$0.1 per call or \$100 per month, which is similar to typical API pricing models.
+    With the Airnode protocol, the API providers do not have to concern themselves with gas costs, and can use typical pricing models such as monthly subscription fees.
     \item As mentioned in Section~\ref{sec:barriers-to-api-providers-operating-oracles}, it is not reasonable to expect API providers to be able to convert fiat into cryptocurrency and fund their node wallets as a part of their day-to-day operations.
     In this scheme, the node operator never has to think about their node wallet balance.
     \item As seen in a recent attack performed on Chainlink data feeds~\cite{chainlink-gastoken}, oracle nodes that use a common wallet to fulfill requests are susceptible to attackers spamming requests to drain their wallets.
     The solution to this is for the node operators to maintain a whitelist of trusted addresses that they will accept requests from.
     In addition to the difficulty of determining which contracts are supposed to be trusted in this context, this renders any kind of public listing service practically infeasible.
     This is a critical issue, as it stops the little independent ecosystem growth there is dead in its tracks.
-    Airnode is not susceptible to this type of an attack, as a requester's designated wallet is only used to fulfill requests from the said requester, and cannot be drained by others.
+    Airnode is not susceptible to this type of an attack, as a requester's wallet is only used to fulfill requests from the said requester, and cannot be drained by others.
     \item Traditional oracle nodes have to fulfill all requests with very high gas prices, as they cannot tolerate their transaction queue being blocked by a single transaction made with a low gas price.
     With the Airnode protocol, this is no longer a concern, as each requester will have a separate transaction queue.
     Then, requesters whose requests are not time-critical would be able to provide the fulfillment gas price as a request parameter and enjoy service at a much lower gas cost.
-    This scheme can be expected to synergize with EIP1559~\cite{eip1559}.
+    This scheme synergizes especially well with EIP-1559~\cite{eip1559}.
 \end{itemize}
 
 Finally, let us briefly mention how the Airnode protocol approaches monetization.
 It is common for a project-specific token to be worked into the core of the protocol in an attempt to ensure that the said token is needed.
-However, this induces an enormous gas price overhead, severely restricts alternative monetization options and creates overall friction.
+However, this induces a significant gas price overhead, severely restricts alternative monetization options and creates overall friction.
 For these reasons, the Airnode protocol purposefully avoids using such a token.
 Instead, the node operator is allowed to associate custom authorizer contracts to their oracle endpoints, which essentially decide if a requester should be responded to based on any criteria that can be implemented on-chain.
 The authorizer contracts can be used to enforce whitelists, blacklists, monthly subscription payments or per-call fees.
@@ -486,19 +486,19 @@ Although dAPI monetization is a completely independent matter, the flexibility t
 There is a chicken-and-egg problem when it comes to integrating APIs to oracles.
 If there is no existing demand for an API in an oracle ecosystem, nobody is incentivized to do the integration.
 If the API is not available due to a lack of integration, nobody develops applications that will create the demand.
-This was identified as a key friction point for the Chainlink ecosystem, and Honeycomb API Marketplace was proposed as a solution~\cite{benligiray:2019}, which has been operational for over a year~\cite{honeycomb.market}.
-Honeycomb has integrated a large number of premium APIs to Chainlink oracles, and as a result, this marketplace serves an API variety that is unmatched in any oracle ecosystem.
+This was identified as a key friction point for the Chainlink ecosystem, and Honeycomb API Marketplace was proposed as a solution~\cite{benligiray:2019}.
+Honeycomb had integrated a large number of premium APIs to Chainlink oracles, and as a result, this marketplace served an API variety that is unmatched in any oracle ecosystem of its time.
 
-Honeycomb uses a universal external adapter and a novel method to integrate APIs to Chainlink oracles in a declarative way, without requiring any code to be written.
+Honeycomb used a universal external adapter and a novel method to integrate APIs to Chainlink oracles in a declarative way, without requiring any code to be written.
 This method is superior to developing an external adapter for each API operation~\cite{external-adapters} in that its integrations are faster, less error-prone, and can be done by non-experts.
-Using these proprietary tools, Honeycomb was able to integrate hundreds of unique API operations in a few months, which dwarfs the closest competition by an order of magnitude.
+Using these proprietary tools, Honeycomb was able to integrate hundreds of unique API operations in a few months, which dwarfed the closest competition by an order of magnitude.
 
 For API3 to reach its full potential, it will need hundreds, if not thousands of first-party oracles so that it can easily set up new dAPIs or recompose existing ones.
 This can only be achieved if APIs can be integrated to Airnode in an even more scalable way.
-To this end, an improved version of the proprietary integration tools described above will be open sourced for Airnode.
+To this end, an improved version of the proprietary integration tools described above are open sourced for Airnode.
 Borrowing from the OpenAPI Specification format~\cite{oas}, Oracle Integration Specifications (OIS) define the operations of an API, the endpoints of an oracle, and how the two map to each other.
-An Airnode user will be able to serve an API over their oracle simply by providing its OIS to their node.
-Integrations made in this standardized format will be very easy to collect, version and distribute.
+An Airnode user is able to serve an API over their oracle simply by providing its OIS to their node.
+Integrations made in this standardized format are very easy to collect, version and distribute.
 
 OIS is a JSON file, primarily designed to describe the integration specifications for Airnode to use.
 This means that it does not aim to be human-readable first and creating it manually to specify an integration would be difficult.
@@ -513,7 +513,7 @@ As a result, API3 will have a wide selection of first-party oracles to compose d
 A single point of failure is a critical component of a system where, if failure occurs, there is no redundancy to compensate, causing the entire system to fail.
 Centralization produces single points of failure and decentralization aims to eliminate them.
 Blockchain-based applications implicitly claim decentralization, yet the majority are still centralized in some aspects, notably governance~\cite{Walch:2019}.
-In this section, we will discuss the problems arising from centralized governance and how API3 will solve these by way of a decentralized autonomous organization (DAO)~\cite{buterin:2014b} with well-designed tokenomics.
+In this section, we will discuss the problems arising from centralized governance and how API3 solves these by way of a decentralized autonomous organization (DAO)~\cite{buterin:2014b} with well-designed tokenomics.
 
 \subsection{Centralized oracle network governance}
 \label{sec:centralized-oracle-network-governance}
@@ -553,13 +553,13 @@ This typically results in honest and efficient allocation of development and eco
 \subsection{API3 DAO}
 \label{sec:api3-dao}
 
-To decentralize the governance of both dAPIs and the project as a whole, API3 will be governed by a DAO.
-The governance will be entirely decentralized and open, meaning that all stakeholders will be able to participate in the governance of the project directly.
-This will be achieved through the API3 token, which will grant voting power in the API3 DAO through the mechanics described in Section~\ref{sec:api3-tokenomics}.
+To decentralize the governance of both dAPIs and the project as a whole, API3 is governed by a DAO\footnote{\url{https://api3.eth.link} is a dashboard for the API3 DAO that is maintained by the core technical team.}.
+The governance is entirely decentralized and open, meaning that all stakeholders are able to participate in the governance of the project directly.
+This is achieved through the API3 token, which grants voting power in the API3 DAO through the mechanics described in Section~\ref{sec:api3-tokenomics}.
 
-The DAO will vote on high-level parameters regarding mechanics such as staking incentives and collateralization.
-Additionally, the DAO will give out grants from the DAO bank and by consequence decide on the general direction of the project.
-More granular tasks will be conducted through hierarchical team structures for scalable governance.
+The DAO votes on high-level parameters regarding mechanics such as staking incentives and collateralization.
+Additionally, the DAO gives out grants and by consequence decide on the general direction of the project.
+More granular tasks are conducted through hierarchical team structures for scalable governance.
 
 The expected workflow is for people to form off-chain teams and apply for grants to execute one-time projects or continuous operations that will benefit API3.
 The team makes the grant application with a multisig that has the team members assigned as users (e.g., Gnosis Safe~\cite{gnosis}), and the DAO grants the funds to the multisig if the grant proposal is accepted.
@@ -671,7 +671,7 @@ This incentivizes all stakers to cooperate to maximize the token price one year 
 \subsubsection{Collateral}
 \label{sec:collateral}
 
-If staking API3 only yielded rewards, the sole governance incentive would be to maximize the revenue.
+If staking API3 only yielded rewards, the sole governance incentive would be to maximize payments.
 This would be done by increasing the number of dAPI users aggressively, and the amount that is secured by the dAPIs with it.
 In Section~\ref{sec:middleman-tax}, we have shown that the total load a dAPI is under increases its likelihood to malfunction due to an attack.
 Therefore, this is not a sustainable governance strategy for decentralized data feeds.
@@ -695,7 +695,7 @@ See Section~\ref{sec:quantifiable-security-through-insurance} for the details of
          \label{fig:systems-diagram-plot}
      \end{subfigure}
     \caption{Staking and insurance collateralization utilities of the API3 token results in balanced governance incentives.
-    \textbf{(a)} Loading the dAPIs with more users increases the likelihood of paying out insurance claims, which produces negative feedback and balances the system.
+    \textbf{(a)} Loading the dAPIs with more users increases the likelihood of paying out insurance claims, which produces negative feedback and balances the system. \textbf{B} indicates that the loop is balancing.
    \textbf{(b)} Due to the balanced nature of the system, the dAPI load does not increase indefinitely, yet settles at a level that the DAO estimates as being below the maximum load the dAPIs can support.}
     \label{fig:systems-diagram-full}
 \end{figure}
@@ -713,8 +713,8 @@ In other words, dAPI users are protected in either case.
 \subsubsection{Governance}
 \label{sec:governance}
 
-The only way to gain representation at the API3 DAO will be to stake API3 tokens in the insurance collateral pool.
-As such, the governing parties will be exposed to all risks and rewards of API3, and will govern to optimize them.
+The only way to gain representation at the API3 DAO is to stake API3 tokens in the insurance collateral pool.
+As such, the governing parties are exposed to all risks and rewards of API3, and will govern to optimize them.
 
 Inflationary rewards and the staked governance tokens being used as collateral will create a positive feedback loop in terms of governance quality.
 Initial token holders will have to stake and expose themselves to risk if they do not want to lose value to inflation.
