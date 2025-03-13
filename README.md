@@ -2,11 +2,11 @@
 
 Use the communication channels to discuss the whitepaper:
 
-* Discord: https://discord.com/invite/qnRrcfnm5W
+- Discord: https://discord.gg/api3dao
 
-* Forum: https://forum.api3.org/
+- Forum: https://forum.api3.org/
 
-* Telegram: https://t.me/API3DAO
+- Telegram: https://t.me/API3DAO
 
 Create an [issue](https://github.com/api3dao/api3-whitepaper/issues) to propose an update.
 
